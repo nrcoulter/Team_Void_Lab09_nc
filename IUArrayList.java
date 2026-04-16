@@ -157,12 +157,12 @@ public class IUArrayList<E> implements IndexedUnsortedList<E> {
 
 	@Override
 	public boolean isEmpty() {
-		return this.modCount == 0;
+		return size() == 0;
 	}
 
 	@Override
 	public int size() {
-		return this.modCount;
+		return this.array.length;
 	}
 
 	@Override
