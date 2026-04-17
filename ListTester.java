@@ -19,7 +19,7 @@ public class ListTester {
 		goodList, badList, arrayList, singleLinkedList, doubleLinkedList
 	};
 	// TODO: THIS IS WHERE YOU CHOOSE WHICH LIST TO TEST
-	private final static ListToUse LIST_TO_USE = ListToUse.goodList;
+	private final static ListToUse LIST_TO_USE = ListToUse.arrayList;
 
 	// possible results expected in tests
 	private enum Result {
@@ -52,7 +52,7 @@ public class ListTester {
 	private int secFails = 0;
 
 	//control output - modified by command-line args
-	private boolean printFailuresOnly = true;
+	private boolean printFailuresOnly = false;
 	private boolean showToString = true;
 	private boolean printSectionSummaries = true;
 
@@ -102,7 +102,7 @@ public class ListTester {
 		if (!result || !printFailuresOnly) {
 			System.out.printf("%-46s\t%s\n", testDesc, (result ? "   PASS" : "***FAIL***"));
 		}
-	}
+	}  
 
 	/** Print a final summary */
 	private void printFinalSummary() {
@@ -300,9 +300,9 @@ public class ListTester {
 		case badList:
 			listToUse = new BadList<Integer>();
 			break;
-		// case arrayList:
-		// 	listToUse = new IUArrayList<Integer>();
-		// 	break;
+		case arrayList:
+			listToUse = new IUArrayList<Integer>();
+			break;
 		// case singleLinkedList:
 		// 	listToUse = new IUSingleLinkedList<Integer>();
 		// 	break;
